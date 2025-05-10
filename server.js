@@ -24,6 +24,12 @@ mongoose
   .catch((err) => console.error("MongoDB error:", err));
 
 // Redis Client Setup
+
+app.use((req, res, next) => {
+  console.log(`Request received from: ${req.ip}`);
+  next();
+});
+
 const redisClient = createClient({
   username: "default",
   password: "NKE96XG2Mgv7DALa9Ylq1Cy8y9jkV23l",
