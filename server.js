@@ -50,7 +50,7 @@ redisClient.connect().then(() => {
     // Rate Limiter: 10 requests/min
     const limiter = rateLimit({
       windowMs: 60 * 1000,
-      max: 10000,
+      max: 10000000,
       message: "Too many requests, please try again later.",
       standardHeaders: true,
       legacyHeaders: false,
